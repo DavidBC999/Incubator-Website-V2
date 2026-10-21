@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OZO | Ultra-Compact Ozone Gym Bag Deodorizer</title>
+  <meta name="description" content="OZO is an ultra-compact, rechargeable digital ozone deodorizer engineered to eliminate gym bag odors at the molecular level.">
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar (Simplified Direct Links, No Dropdown) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">O₃</div>
+        <span>OZO</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#spatial">Dimensions</a></li>
+        <li><a href="#features">Technology</a></li>
+        <li><a href="our-journey.html">Our Journey</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="btn-pill" onclick="openPrototypeModal()">Order Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="overview" class="hero">
+    <div class="container">
+      <div class="hero-header reveal">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Incubator Product</span>
+        </div>
+        <h1 class="hero-title">
+          Introducing the New <span class="gradient-text">OZO Pod</span>
+        </h1>
+        <p class="hero-subtitle">
+          Keep Odor Clear, Freshen Your Gear
+        </p>
+      </div>
+
+      <!-- Video Demo Section (Side-by-side 2 Columns Card) -->
+      <div class="hero-video-card reveal reveal-delay-1" data-tilt>
+        <div class="hero-video-grid">
+          <!-- Left Column: Portrait Video Frame with Bordered Frame Padding & Play Overlay -->
+          <div class="video-frame-col">
+            <div class="video-portrait-frame">
+              <video 
+                id="heroProductVideo" 
+                playsinline 
+                preload="metadata" 
+                loop 
+                controls
+                src="OZO_Video.mp4">
+                Your browser does not support the video tag.
+              </video>
+              
+              <!-- Play Button Overlay -->
+              <div class="video-play-overlay" id="videoPlayOverlay" role="button" tabindex="0" aria-label="Play OZO Pod Video Demo">
+                <div class="play-btn-circle">
+                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <span class="play-btn-text">Watch Demo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Vertically Centered Bold Typography, Order Now CTA & Live Counter -->
+          <div class="video-content-col">
+            <div class="video-demo-text-group">
+              <div class="video-demo-line1">Video Demo</div>
+              <div class="video-demo-line2">Of The</div>
+              <div class="video-demo-line3">OZO Pod</div>
+            </div>
+
+            <!-- 'Order Now' Call-to-Action & Live Interest Counter -->
+            <div class="video-cta-group">
+              <button class="btn-order-now" onclick="openPrototypeModal()" id="btnHeroOrder" aria-label="Order OZO Pod Now">
+                <span class="btn-order-content">
+                  <span>Order Now</span>
+                  <svg class="btn-order-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </button>
+
+              <div class="live-interest-counter-widget" id="liveInterestWidget" onclick="openPrototypeModal()" title="Click to order and reserve your spot">
+                <span class="live-pulse-badge">
+                  <span class="pulse-beacon"></span>
+                  <span class="pulse-dot"></span>
+                </span>
+                <span class="interest-flame">🔥</span>
+                <span class="interest-message" id="interestMessageText">
+                  <strong class="interest-number" id="interestCounterVal">0</strong> orders placed &bull; Be the first to order!
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Action CTAs -->
+      <div class="hero-ctas reveal reveal-delay-2" style="margin-bottom: 36px;">
+        <button class="btn-pill" onclick="openPrototypeModal()">Order Now</button>
+        <a href="our-journey.html" class="btn-secondary">Explore Our Journey →</a>
+      </div>
+
+      <!-- Quick Specs Strip -->
+      <div class="quick-specs-bar">
+        <div class="spec-item reveal reveal-delay-1" data-tilt>
+          <div class="spec-value">4.5″ × 3.0″ × 1.0″</div>
+          <div class="spec-label">114mm × 76mm × 25mm</div>
+        </div>
+        <div class="spec-item reveal reveal-delay-2" data-tilt>
+          <div class="spec-value">20+ Cycles</div>
+          <div class="spec-label">Battery Endurance per Charge</div>
+        </div>
+        <div class="spec-item reveal reveal-delay-3" data-tilt>
+          <div class="spec-value">30mm Fan</div>
+          <div class="spec-label">Micro-Turbine Forced Air</div>
+        </div>
+        <div class="spec-item reveal reveal-delay-4" data-tilt>
+          <div class="spec-value">USB-C</div>
+          <div class="spec-label">Side Charging Port</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expanded Spatial Scale Comparison Section (iPhone 17, AirPods Pro Landscape, Shaker Bottle Tapered) -->
+  <section id="spatial" class="spatial-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Spatial Dimensions</div>
+        <h2 class="section-title">Compact &amp; Pocketable</h2>
+        <p class="section-desc">At just 114mm long, OZO easily slips into shoe pockets, gym duffle sleeves, or gear lockers.</p>
+      </div>
+
+      <div class="spatial-tabs reveal reveal-delay-1">
+        <button class="spatial-tab-btn active" onclick="switchSpatialTab('iphone', this)">vs. iPhone 17</button>
+        <button class="spatial-tab-btn" onclick="switchSpatialTab('airpods', this)">vs. AirPods Pro Case</button>
+        <button class="spatial-tab-btn" onclick="switchSpatialTab('shaker', this)">vs. Gym Shaker Bottle</button>
+      </div>
+
+      <div class="spatial-comparison-card reveal reveal-delay-2" data-tilt>
+        <div class="spatial-visualizer-container">
+          <!-- OZO Device: 114mm x 76mm x 25mm -->
+          <div class="spatial-device device-ozo">
+            <div style="font-weight: 700; font-size: 15px;">OZO</div>
+            <div style="font-size: 11px; opacity: 0.7; margin-top: 2px;">114mm × 76mm</div>
+            <div style="font-size: 10px; color: var(--accent-blue); margin-top: 4px; font-weight: 600;">25mm Depth</div>
+          </div>
+
+          <!-- Target Device Stage with fluid morph cross-fade -->
+          <div class="spatial-target-stage">
+            <!-- iPhone 17 Target View -->
+            <div class="spatial-device device-iphone device-target-view active-view" id="targetView_iphone">
+              <div style="width: 32px; height: 7px; background: #000; border-radius: 100px; margin-top: 8px;"></div>
+              <div style="font-weight: 600; font-size: 13px; margin-top: auto; margin-bottom: 2px;">iPhone 17</div>
+              <div style="font-size: 10px; opacity: 0.7; margin-bottom: 16px;">149.6mm × 71.5mm</div>
+            </div>
+
+            <!-- AirPods Pro Target View (Correct Landscape Orientation: 60.6mm wide x 45.2mm tall) -->
+            <div class="spatial-device device-airpods device-target-view" id="targetView_airpods">
+              <div style="font-weight: 600; font-size: 12px; margin-top: auto; margin-bottom: 2px;">AirPods Pro</div>
+              <div style="font-size: 10px; color: var(--text-secondary); margin-bottom: 10px;">60.6mm × 45.2mm</div>
+            </div>
+
+            <!-- Gym Shaker Bottle Target View (28 oz Tapered Shaker Bottle: 220mm tall x 90mm wide) -->
+            <div class="spatial-device device-shaker device-target-view" id="targetView_shaker">
+              <svg class="shaker-svg-graphic" viewBox="0 0 100 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Flip Cap Top -->
+                <rect x="36" y="8" width="28" height="14" rx="4" fill="#1d1d1f"/>
+                <!-- Shaker Collar Lid (90mm Wide Top) -->
+                <path d="M10 22 H90 V44 H10 Z" fill="#0071e3"/>
+                <!-- Tapered Body (Tapers from 90mm at top down to 65mm base) -->
+                <path d="M14 44 L22 224 H78 L86 44 Z" fill="#e0e0e4" stroke="#d2d2d7" stroke-width="2"/>
+                <!-- Measurement Markings -->
+                <line x1="30" y1="80" x2="48" y2="80" stroke="#86868b" stroke-width="2"/>
+                <line x1="30" y1="120" x2="48" y2="120" stroke="#86868b" stroke-width="2"/>
+                <line x1="30" y1="160" x2="48" y2="160" stroke="#86868b" stroke-width="2"/>
+                <text x="50" y="200" fill="#1d1d1f" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">28 oz SHAKER</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="spatial-stat-callout">
+          <div>
+            <div class="spatial-stat-val" id="spatialRatioVal">76.2%</div>
+            <div class="spatial-stat-label" id="spatialRatioLabel">Length Relative to iPhone 17</div>
+          </div>
+          <div>
+            <div class="spatial-stat-val">114mm</div>
+            <div class="spatial-stat-label">OZO Total Length</div>
+          </div>
+          <div>
+            <div class="spatial-stat-val">Pocket-Fit</div>
+            <div class="spatial-stat-label">Gym Duffle &amp; Shoe Sleeve Ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O3 Molecular Breakdown Simulation Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Molecular Science</div>
+        <h2 class="section-title">O3 Gas Elimination Simulation</h2>
+        <p class="section-desc">Active O3 gas vectors collide with odor molecules and bacteria, instantly neutralizing them upon contact.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card card-span-12 reveal reveal-delay-1" data-tilt>
+          <div class="card-tag">Interactive Simulation</div>
+          <h3 class="card-title">Particle Collision Neutralization Physics</h3>
+          <p class="card-desc">Watch active O3 gas particles attack red odor molecules. Move cursor or touch across canvas to dynamically disperse odor particles or accelerate molecular breakdown.</p>
+          
+          <div class="speed-control-widget">
+            <div class="sim-top-bar">
+              <button class="btn-pill" id="btnSimToggle" onclick="toggleSimulation()">Start Simulation</button>
+              
+              <div class="speed-stage-selector">
+                <button class="speed-stage-btn active" onclick="setSpeedMultiplier(1, this)">1x Speed</button>
+                <button class="speed-stage-btn" onclick="setSpeedMultiplier(2, this)">2x Speed</button>
+                <button class="speed-stage-btn" onclick="setSpeedMultiplier(3, this)">3x Speed</button>
+              </div>
+            </div>
+
+            <div class="speed-canvas-box">
+              <canvas id="speedCanvas"></canvas>
+            </div>
+            
+            <div style="margin-top: 10px; font-size: 12px; color: var(--text-secondary); text-align: center;" id="simStatusReadout">
+              Status: Idle (Odor Molecules Present • Hover/Touch to Disperse)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">Safety &amp; Specs</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Learn more about active O3 gas technology, forced air dynamics, and safety cutoffs.</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is active O3 gas safe for my athletic gear?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. OZO runs short, targeted digital cycles that break down organic odor molecules without liquid sprays or chemical residue. It is safe for synthetic tech fabrics, leather cleats, gloves, and foam pads.
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How long does the battery last?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            OZO is engineered to deliver 20+ full deodorizing cycles per charge via the side-mounted USB-C port.
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What are the exact physical dimensions?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            OZO measures 4.5″ × 3.0″ × 1.0″ (114mm × 76mm × 25mm) — significantly shorter than an iPhone 17 for effortless pocket portability.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="brand-logo">
+        <div class="brand-icon">O₃</div>
+        <span>OZO</span>
+      </div>
+      <div class="footer-text">
+        © 2026 OZO Technologies. All rights reserved. Patent Pending.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dedicated Prototype Survey & Information Modal -->
+  <div class="modal-overlay" id="prototypeSurveyModal" role="dialog" aria-modal="true" aria-labelledby="surveyModalTitle">
+    <div class="modal-container survey-modal-container">
+      <button class="modal-close" onclick="closePrototypeModal()" aria-label="Close modal">×</button>
+      
+      <!-- Survey Form View -->
+      <div id="surveyFormView">
+        <div class="modal-header-badge">
+          <span class="badge-dot"></span>
+          <span>Early Access Order</span>
+        </div>
+        
+        <h3 class="modal-title" id="surveyModalTitle">Order Now — Reserve Your OZO Pod (V1.0)</h3>
+        
+        <!-- Incubator Phase Announcement Notice -->
+        <div class="incubator-notice-card">
+          <div class="notice-icon-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="notice-text-content">
+            <div class="notice-heading">Production Batch Announcement</div>
+            <p class="notice-body">
+              We are currently finalizing Version 1.0 of the OZO Pod for production! Complete the quick order details below to reserve your spot in our initial batch and lock in early release pricing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Survey Form -->
+        <form id="prototypeSurveyForm" onsubmit="handleSurveySubmit(event)">
+          <!-- Question 1: Core Intent -->
+          <div class="survey-question-block">
+            <label class="survey-q-label">
+              <span class="q-num">1</span>
+              <span>Would you buy the OZO Pod when Version 1 launches?</span>
+            </label>
+            <div class="survey-options-grid options-3col">
+              <label class="survey-option-card is-selected">
+                <input type="radio" name="buy_intent" value="Yes, absolutely!" checked required>
+                <div class="option-card-inner">
+                  <span class="option-icon">🚀</span>
+                  <span class="option-text">Yes, absolutely!</span>
+                </div>
+              </label>
+              
+              <label class="survey-option-card">
+                <input type="radio" name="buy_intent" value="Maybe / Need more info">
+                <div class="option-card-inner">
+                  <span class="option-icon">🤔</span>
+                  <span class="option-text">Maybe / Need info</span>
+                </div>
+              </label>
+
+              <label class="survey-option-card">
+                <input type="radio" name="buy_intent" value="No">
+                <div class="option-card-inner">
+                  <span class="option-icon">👎</span>
+                  <span class="option-text">No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2: Gear Usage -->
+          <div class="survey-question-block">
+            <label class="survey-q-label">
+              <span class="q-num">2</span>
+              <span>What gear would you use the OZO Pod for? <small style="font-weight: 400; color: var(--text-secondary);">(Select all that apply)</small></span>
+            </label>
+            <div class="survey-options-grid options-chips">
+              <label class="survey-chip-card is-selected">
+                <input type="checkbox" name="gear_use" value="Gym Bags" checked>
+                <div class="chip-inner">
+                  <span class="chip-icon">🎒</span>
+                  <span>Gym Bags</span>
+                </div>
+              </label>
+
+              <label class="survey-chip-card">
+                <input type="checkbox" name="gear_use" value="Cleats/Shoes">
+                <div class="chip-inner">
+                  <span class="chip-icon">👟</span>
+                  <span>Cleats / Shoes</span>
+                </div>
+              </label>
+
+              <label class="survey-chip-card">
+                <input type="checkbox" name="gear_use" value="Lockers">
+                <div class="chip-inner">
+                  <span class="chip-icon">🗄️</span>
+                  <span>Lockers</span>
+                </div>
+              </label>
+
+              <label class="survey-chip-card">
+                <input type="checkbox" name="gear_use" value="Sports Pads/Helmets">
+                <div class="chip-inner">
+                  <span class="chip-icon">🏈</span>
+                  <span>Sports Pads / Helmets</span>
+                </div>
+              </label>
+
+              <label class="survey-chip-card" id="chipOtherGear">
+                <input type="checkbox" name="gear_use" value="Other" id="checkGearOther" onchange="toggleOtherGearInput(this)">
+                <div class="chip-inner">
+                  <span class="chip-icon">➕</span>
+                  <span>Other</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Dynamic Other Input -->
+            <div class="other-gear-input-wrapper" id="otherGearInputWrap" style="display: none; margin-top: 10px;">
+              <input type="text" id="otherGearText" class="survey-text-input" placeholder="Specify your gear (e.g. hockey gloves, yoga duffle)...">
+            </div>
+          </div>
+
+          <!-- Question 3: Price Point -->
+          <div class="survey-question-block">
+            <label class="survey-q-label">
+              <span class="q-num">3</span>
+              <span>What price point feels right for you?</span>
+            </label>
+            <div class="survey-options-grid options-3col">
+              <label class="survey-option-card">
+                <input type="radio" name="price_point" value="$40–$49">
+                <div class="option-card-inner">
+                  <span class="option-price">$40 – $49</span>
+                  <span class="option-price-tag">Under $50</span>
+                </div>
+              </label>
+
+              <label class="survey-option-card is-selected">
+                <input type="radio" name="price_point" value="$50–$60" checked required>
+                <div class="option-card-inner">
+                  <span class="option-price">$50 – $60</span>
+                  <span class="option-price-tag">Target Price</span>
+                </div>
+              </label>
+
+              <label class="survey-option-card">
+                <input type="radio" name="price_point" value="$60+">
+                <div class="option-card-inner">
+                  <span class="option-price">$60+</span>
+                  <span class="option-price-tag">Premium Tier</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 4: Contact Info -->
+          <div class="survey-question-block">
+            <label class="survey-q-label" for="surveyEmailInput">
+              <span class="q-num">4</span>
+              <span>Enter your email for order updates <small style="font-weight: 400; color: var(--text-secondary);">(Optional)</small>:</span>
+            </label>
+            <div class="survey-email-field">
+              <input type="email" id="surveyEmailInput" class="survey-text-input email-input" placeholder="your.name@example.com (optional)">
+              <span class="email-subtext">🔒 Optional &amp; no spam. Enter your email only if you want early batch notifications and launch discounts.</span>
+            </div>
+          </div>
+
+          <!-- Submit CTA -->
+          <button type="submit" class="btn-order-now survey-submit-btn" id="btnSurveySubmit">
+            <span class="btn-order-content">
+              <span>Order Now &amp; Reserve Spot</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Submission Feedback: Thank You Confirmation View -->
+      <div id="surveySuccessView" style="display: none;" class="survey-success-state">
+        <div class="success-icon-animation">
+          <svg class="success-checkmark" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="24" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+
+        <h3 class="success-title">Spot Reserved! Thank You!</h3>
+        
+        <p class="success-desc">
+          Your feedback has been successfully recorded and will directly shape the final engineering of <strong>OZO Pod Version 1.0</strong>.
+        </p>
+
+        <div class="success-counter-badge">
+          <span class="interest-flame">🔥</span>
+          <span id="successCounterMessage">You helped increase community orders to <strong id="successCounterNum">1</strong> supporter!</span>
+        </div>
+
+        <div class="success-card-summary">
+          <div class="summary-item">
+            <span class="summary-label">Status:</span>
+            <span class="summary-val text-mint">VIP Order Confirmed ✓</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Product:</span>
+            <span class="summary-val">OZO Pod V1.0 (Early Access)</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Target Price:</span>
+            <span class="summary-val" id="successPriceDisplay">$50 – $60</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Email:</span>
+            <span class="summary-val" id="successEmailDisplay">None provided (Optional)</span>
+          </div>
+        </div>
+
+        <div class="success-actions">
+          <button class="btn-pill" onclick="closePrototypeModal()">Back to Website</button>
+          <a href="our-journey.html" class="btn-secondary">View Prototype Journey →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
